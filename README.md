@@ -7,3 +7,36 @@ Requirements.
 - Can do AJAX GET and POST requests  without extra libraries.
 - Is implemented in pure Javascript, compatible with all major browsers (Chrome, Firefox, Safari, Edge)
 - contained in a single file under 2000 lines long
+
+```
+// Usage examples
+// DOM manipulation and event handling
+ai('#myElement').html('Hello, World!');
+ai('button').on('click', function () {
+  alert('Button clicked!');
+});
+
+// AJAX GET request
+ai().ajax({
+  url: 'https://jsonplaceholder.typicode.com/todos/1',
+  success: function (response) {
+    console.log('Success:', response);
+  },
+  error: function (status, statusText) {
+    console.error('Error:', status, statusText);
+  },
+});
+
+// AJAX POST request
+ai().ajax({
+  method: 'POST',
+  url: 'https://jsonplaceholder.typicode.com/posts',
+  data: 'title=MyTitle&body=MyBody&userId=1',
+  success: function (response) {
+    console.log('Success:', response);
+  },
+  error: function (status, statusText) {
+    console.error('Error:', status, statusText);
+  },
+});
+```
