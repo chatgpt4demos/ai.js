@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI.js Example</title>
+</head>
+<body>
+  <button id="loadText">Load Text</button>
+  <textarea id="textBox" rows="10" cols="30"></textarea>
+
+  <script src="ai.js"></script>
+  <script>
+    ai('#loadText').on('click', function () {
+      ai().ajax({
+        url: 'https://server.com/api/test/endpoint',
+        success: function (response) {
+          ai('#textBox').html(response);
+        },
+        error: function (status, statusText) {
+          console.error('Error:', status, statusText);
+        },
+      });
+    });
+  </script>
+</body>
+</html>
